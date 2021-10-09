@@ -1,0 +1,577 @@
+{
+	"info": {
+		"_postman_id": "a2477225-17ff-401b-be00-9b90aacbc160",
+		"name": "jwt-project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"David\",\n    \"last_name\": \"Ortega\",\n    \"email\": \"dortega@doitright.com\",\n    \"password\": \"Test@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"David\",\n    \"last_name\": \"Ortega\",\n    \"email\": \"dortega@doitright.com\",\n    \"password\": \"Test@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "421"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a5-BlmxdxpydXeOcPC9+GVdcWLR5i8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 09 Oct 2021 09:29:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"first_name\": \"David\",\n    \"last_name\": \"Ortega\",\n    \"email\": \"dortega@doitright.com\",\n    \"password\": \"$2a$10$T26.oMiMvLU.AOnUlh5zEeKDzVr69ZbYS9/mIP1gmb7oLW8KZxSTe\",\n    \"_id\": \"616161027889f83f4cc460f4\",\n    \"__v\": 0,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjE2MTYxMDI3ODg5ZjgzZjRjYzQ2MGY0IiwiZW1haWwiOiJkb3J0ZWdhQGRvaXRyaWdodC5jb20iLCJpYXQiOjE2MzM3NzE3NzgsImV4cCI6MTYzMzc3ODk3OH0.sRwMlDysec7s0V_LLUQGok3hfleJlNcT-GeHZ3uERMI\"\n}"
+				},
+				{
+					"name": "User exists",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"David\",\n    \"last_name\": \"Ortega\",\n    \"email\": \"dortega@doitright.com\",\n    \"password\": \"Test@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "32"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"20-ev44IWx6moGfzHpDkL/+NWHC0rQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 09 Oct 2021 09:45:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "User Already Exist. Please Login"
+				},
+				{
+					"name": "Missing fields",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"David\",\n    \"last_name\": \"Ortega\",\n    \"password\": \"Test@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "21"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"15-n/fxcE/g0cYbUAMkvvG2L/e+Z5g\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 09 Oct 2021 09:48:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "All input is required"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"dortega@doitright.com\",\n    \"password\": \"Test@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"dortega@doitright.com\",\n    \"password\": \"Test@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "421"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a5-PPJlm3hqEBOLW7uEMFr0jFFPsp4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 09 Oct 2021 09:37:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"_id\": \"616161027889f83f4cc460f4\",\n    \"first_name\": \"David\",\n    \"last_name\": \"Ortega\",\n    \"email\": \"dortega@doitright.com\",\n    \"password\": \"$2a$10$T26.oMiMvLU.AOnUlh5zEeKDzVr69ZbYS9/mIP1gmb7oLW8KZxSTe\",\n    \"__v\": 0,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjE2MTYxMDI3ODg5ZjgzZjRjYzQ2MGY0IiwiZW1haWwiOiJkb3J0ZWdhQGRvaXRyaWdodC5jb20iLCJpYXQiOjE2MzM3NzIyNTQsImV4cCI6MTYzMzc3OTQ1NH0.l5vScdhfZBYuo4QTyC86mstrcDySvF74ZvzpZ8jzq9M\"\n}"
+				},
+				{
+					"name": "Invalid",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"dortega@doitright.com\",\n    \"password\": \"Test@3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "19"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"13-PuuzgyfNi7tFpjLCikL1IIo5lik\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 09 Oct 2021 09:39:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Invalid Credentials"
+				},
+				{
+					"name": "Missing fields",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"password\": \"Test@123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4001/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "21"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"15-n/fxcE/g0cYbUAMkvvG2L/e+Z5g\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 09 Oct 2021 09:54:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "All input is required"
+				}
+			]
+		},
+		{
+			"name": "Welcome",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjE2MTYxMDI3ODg5ZjgzZjRjYzQ2MGY0IiwiZW1haWwiOiJkb3J0ZWdhQGRvaXRyaWdodC5jb20iLCJpYXQiOjE2MzM3NzI0MjgsImV4cCI6MTYzMzc3OTYyOH0.u0Xkl4HU6WqssHma5EZNt7PQHXWMCYNQgJkKi3oUcjo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4001/welcome",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"welcome"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Valid token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjE2MTYxMDI3ODg5ZjgzZjRjYzQ2MGY0IiwiZW1haWwiOiJkb3J0ZWdhQGRvaXRyaWdodC5jb20iLCJpYXQiOjE2MzM3NzI0MjgsImV4cCI6MTYzMzc3OTYyOH0.u0Xkl4HU6WqssHma5EZNt7PQHXWMCYNQgJkKi3oUcjo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:4001/welcome",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"welcome"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "13"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d-Ggfsu/9hPXjnNL+AwC2JTy3LAD8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 09 Oct 2021 09:43:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Welcome 🙌 "
+				},
+				{
+					"name": "No token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4001/welcome",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"welcome"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "38"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"26-5iafIA9nBRk2WUQaD8Ai8nUSe+M\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 09 Oct 2021 09:42:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "A token is required for authentication"
+				}
+			]
+		}
+	]
+}
